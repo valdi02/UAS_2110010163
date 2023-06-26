@@ -32,6 +32,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -40,6 +41,7 @@ type
 
 var
   Form3: TForm3;
+  id:string;
 
 implementation
 
@@ -122,7 +124,7 @@ begin
   begin
     ShowMessage('INPUTAN WAJIB DIISI!');
   end
-  else if Edit1.Text = ZQuery1.Fields[0].AsString then
+  else if Edit3.Text = ZQuery1.Fields[2].AsString then
   begin
     ShowMessage('DATA TIDAK ADA PERUBAHAN');
     posisiawal;
@@ -131,7 +133,7 @@ begin
   begin
     ShowMessage('DATA BERHASIL DIUPDATE!'); // Update
     ZQuery1.SQL.Clear;
-    ZQuery1.SQL.Add('UPDATE kelas SET id_kelas = "' + Edit1.Text + '", Nama_kelas = "' + Edit2.Text + '", Jurusan = "' + Edit3.Text + '" WHERE id_kelas = "' + ZQuery1.Fields[0].AsString + '"');
+    ZQuery1.SQL.Add('UPDATE kelas SET id_kelas = "' + Edit1.Text + '", Namakelas = "' + Edit2.Text + '", Jurusan = "' + Edit3.Text + '" WHERE id_kelas = "' + Edit1.Text+ '"');
     ZQuery1.ExecSQL;
 
     ZQuery1.SQL.Clear;
@@ -143,25 +145,12 @@ end;
 
 procedure TForm3.Button5Click(Sender: TObject);
 begin
-  ZQuery1.Fields[0].AsString; // DBGrid
-  Edit1.Text := ZQuery1.Fields[1].AsString;
-  Edit2.Text := ZQuery1.Fields[2].AsString;
-  Edit3.Text := ZQuery1.Fields[3].AsString;
 
-  Edit1.Enabled := True;
-  Edit2.Enabled := True;
-  Edit3.Enabled := True;
-
-  Button1.Enabled := False;
-  Button2.Enabled := False;
-  Button3.Enabled := True;
-  Button4.Enabled := True;
-  Button5.Enabled := True;
 
   if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?', mtWarning, [mbYes, mbNo], 0) = mrYes then
   begin
     ZQuery1.SQL.Clear;
-    ZQuery1.SQL.Add('DELETE FROM kelas WHERE id_kelas = "' + ZQuery1.Fields[0].AsString + '"');
+    ZQuery1.SQL.Add('DELETE FROM kelas WHERE id_kelas = "' + Edit1.Text + '"');
     ZQuery1.ExecSQL;
 
     ZQuery1.SQL.Clear;
@@ -175,6 +164,25 @@ begin
   begin
     ShowMessage('DATA BATAL DIHAPUS');
   end;
+end;
+
+procedure TForm3.DBGrid1CellClick(Column: TColumn);
+begin
+  // DBGrid
+  Edit1.Text := ZQuery1.Fields[0].AsString;
+  Edit2.Text := ZQuery1.Fields[1].AsString;
+  Edit3.Text := ZQuery1.Fields[2].AsString;
+
+  Edit1.Enabled := false;
+  Edit2.Enabled := True;
+  Edit3.Enabled := True;
+
+  Button1.Enabled := False;
+  Button2.Enabled := False;
+  Button3.Enabled := True;
+  Button4.Enabled := True;
+  Button5.Enabled := True;
+
 end;
 
 end.

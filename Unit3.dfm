@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 198
-  Top = 163
+  Left = 262
+  Top = 185
   Width = 928
   Height = 480
   Caption = 'Form3'
@@ -110,6 +110,7 @@ object Form3: TForm3
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button5: TButton
     Left = 376
