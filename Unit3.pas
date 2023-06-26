@@ -33,6 +33,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -183,6 +184,11 @@ begin
   Button4.Enabled := True;
   Button5.Enabled := True;
 
+end;
+
+procedure TForm3.Button4Click(Sender: TObject);
+begin
+   posisiawal;
 end;
 
 end.

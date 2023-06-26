@@ -97,6 +97,7 @@ object Form3: TForm3
     Height = 25
     Caption = 'Cancel'
     TabOrder = 6
+    OnClick = Button4Click
   end
   object DBGrid1: TDBGrid
     Left = 128
