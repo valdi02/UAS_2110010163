@@ -62,9 +62,4 @@ end;
 end;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-Application.Terminate;
-end;
-
 end.

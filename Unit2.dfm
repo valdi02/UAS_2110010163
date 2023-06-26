@@ -15,6 +15,11 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu
-    Left = 8
+    Left = 56
+    Top = 56
+    object Kelas1: TMenuItem
+      Caption = 'Kelas'
+      OnClick = Kelas1Click
+    end
   end
 end
