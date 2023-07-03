@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 210
-  Top = 172
+  Left = 184
+  Top = 272
   Width = 928
   Height = 480
   Caption = 'Form4'
@@ -17,7 +17,7 @@ object Form4: TForm4
     Left = 0
     Top = 0
     Width = 809
-    Height = 385
+    Height = 417
     TabOrder = 0
     object Label1: TLabel
       Left = 160
@@ -194,5 +194,88 @@ object Form4: TForm4
       Height = 21
       TabOrder = 11
     end
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 272
+      Width = 785
+      Height = 120
+      DataSource = DataSource1
+      TabOrder = 12
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+    object Button1: TButton
+      Left = 112
+      Top = 232
+      Width = 75
+      Height = 25
+      Caption = 'add'
+      TabOrder = 13
+    end
+    object Button2: TButton
+      Left = 200
+      Top = 232
+      Width = 75
+      Height = 25
+      Caption = 'simpan'
+      TabOrder = 14
+    end
+    object Button3: TButton
+      Left = 288
+      Top = 232
+      Width = 75
+      Height = 25
+      Caption = 'edit'
+      TabOrder = 15
+    end
+    object Button4: TButton
+      Left = 376
+      Top = 232
+      Width = 75
+      Height = 25
+      Caption = 'hapus'
+      TabOrder = 16
+    end
+    object Button5: TButton
+      Left = 472
+      Top = 232
+      Width = 75
+      Height = 25
+      Caption = 'cancel'
+      TabOrder = 17
+    end
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'admin'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 
+      'C:\Program Files (x86)\Borland\Delphi7\Projects\projek_uas\libmy' +
+      'sql.dll'
+    Left = 360
+    Top = 336
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from t_siswa')
+    Params = <>
+    Left = 328
+    Top = 336
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 80
+    Top = 328
   end
 end
