@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 184
-  Top = 272
+  Left = 281
+  Top = 156
   Width = 928
   Height = 480
   Caption = 'Form4'
@@ -11,11 +11,12 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
-    Left = 0
-    Top = 0
+    Left = -48
+    Top = 40
     Width = 809
     Height = 417
     TabOrder = 0
@@ -152,60 +153,54 @@ object Form4: TForm4
       Height = 21
       TabOrder = 5
     end
-    object Edit7: TEdit
-      Left = 392
-      Top = 120
-      Width = 121
-      Height = 21
-      TabOrder = 6
-    end
     object Edit8: TEdit
       Left = 392
       Top = 144
       Width = 121
       Height = 21
-      TabOrder = 7
+      TabOrder = 6
     end
     object Edit9: TEdit
       Left = 392
       Top = 168
       Width = 121
       Height = 21
-      TabOrder = 8
+      TabOrder = 7
     end
     object Edit10: TEdit
       Left = 568
       Top = 96
       Width = 121
       Height = 21
-      TabOrder = 9
+      TabOrder = 8
     end
     object Edit11: TEdit
       Left = 568
       Top = 120
       Width = 121
       Height = 21
-      TabOrder = 10
+      TabOrder = 9
     end
     object Edit12: TEdit
       Left = 568
       Top = 144
       Width = 121
       Height = 21
-      TabOrder = 11
+      TabOrder = 10
     end
     object DBGrid1: TDBGrid
-      Left = 8
+      Left = 128
       Top = 272
-      Width = 785
+      Width = 569
       Height = 120
       DataSource = DataSource1
-      TabOrder = 12
+      TabOrder = 11
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
     end
     object Button1: TButton
       Left = 112
@@ -213,7 +208,8 @@ object Form4: TForm4
       Width = 75
       Height = 25
       Caption = 'add'
-      TabOrder = 13
+      TabOrder = 12
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 200
@@ -221,7 +217,8 @@ object Form4: TForm4
       Width = 75
       Height = 25
       Caption = 'simpan'
-      TabOrder = 14
+      TabOrder = 13
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 288
@@ -229,7 +226,8 @@ object Form4: TForm4
       Width = 75
       Height = 25
       Caption = 'edit'
-      TabOrder = 15
+      TabOrder = 14
+      OnClick = Button3Click
     end
     object Button4: TButton
       Left = 376
@@ -237,7 +235,8 @@ object Form4: TForm4
       Width = 75
       Height = 25
       Caption = 'hapus'
-      TabOrder = 16
+      TabOrder = 15
+      OnClick = Button4Click
     end
     object Button5: TButton
       Left = 472
@@ -245,6 +244,16 @@ object Form4: TForm4
       Width = 75
       Height = 25
       Caption = 'cancel'
+      TabOrder = 16
+      OnClick = Button5Click
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 392
+      Top = 120
+      Width = 121
+      Height = 21
+      Date = 45110.842048738430000000
+      Time = 45110.842048738430000000
       TabOrder = 17
     end
   end
@@ -262,7 +271,7 @@ object Form4: TForm4
       'C:\Program Files (x86)\Borland\Delphi7\Projects\projek_uas\libmy' +
       'sql.dll'
     Left = 360
-    Top = 336
+    Top = 360
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
@@ -270,12 +279,12 @@ object Form4: TForm4
     SQL.Strings = (
       'select * from t_siswa')
     Params = <>
-    Left = 328
-    Top = 336
+    Left = 320
+    Top = 360
   end
   object DataSource1: TDataSource
     DataSet = ZQuery1
-    Left = 80
-    Top = 328
+    Left = 144
+    Top = 368
   end
 end

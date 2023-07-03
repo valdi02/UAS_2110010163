@@ -10,7 +10,9 @@ type
   TForm2 = class(TForm)
     MainMenu1: TMainMenu;
     Kelas1: TMenuItem;
+    siswa1: TMenuItem;
     procedure Kelas1Click(Sender: TObject);
+    procedure siswa1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,7 +25,7 @@ var
 implementation
 
 uses
-  Unit1, Unit3;
+  Unit1, Unit3 , Unit4;
 
 {$R *.dfm}
 
@@ -31,6 +33,13 @@ uses
 procedure TForm2.Kelas1Click(Sender: TObject);
 begin
   Form3.Show;
+end;
+
+
+
+procedure TForm2.siswa1Click(Sender: TObject);
+begin
+  Form4.show;
 end;
 
 end.

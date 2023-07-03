@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 194
-  Top = 188
+  Left = -3
+  Top = 176
   Width = 928
   Height = 480
   Caption = 'Form2'
@@ -20,6 +20,10 @@ object Form2: TForm2
     object Kelas1: TMenuItem
       Caption = 'Kelas'
       OnClick = Kelas1Click
+    end
+    object siswa1: TMenuItem
+      Caption = 'Siswa'
+      OnClick = siswa1Click
     end
   end
 end
